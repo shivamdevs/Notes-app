@@ -117,6 +117,9 @@
     display: block;
     width: 100%;
 }
+.noteapp .head {
+    margin-bottom: 20px;
+}
 .noteapp .title {
     font-weight: 700;
     font-size: 20px;
@@ -197,13 +200,17 @@
     border-style: solid;
     border-color: #727888 #fff #fff #727888;
 }
-.notepad:focus {
-    
-}
 .tip {
     color: #727888;
     font-size: 14px;
     font-weight: 500;
+    margin-bottom: 20px;
+}
+.tip.error {
+    color: #ea4343;
+}
+.center {
+    text-align: center;
 }
 .noteapp .submit {
     border-color: #2bc48a;
@@ -224,4 +231,51 @@
 .noteapp .switch:hover {
     background-color: #494f61;
     border-color: #494f61;
+}
+
+.noteapp .created {
+    display: block;
+    padding: 10px;
+    background-color: #eef;
+    margin-bottom: 20px;
+    border-left: 5px solid dodgerblue;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px #1e8fff49;
+}
+.noteapp .created .key {
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-block: 10px;
+}
+.noteapp .created .bound {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+.noteapp .created .bound.upper {
+    color: #121212;
+}
+.noteapp .created .bound.lower {
+    color: #727888;
+}
+.noteapp .newnote {
+    background-color: orangered;
+    color: #fff;
+    font-weight: 600;
+}
+.noteapp .newnote:hover {
+    background-color: darkred;
+}
+.noteapp .destroy {
+    background-color: red;
+    color: #fff;
+    font-weight: 600;
+}
+.noteapp .destroy:hover {
+    background-color: darkred;
 }

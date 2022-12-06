@@ -9,7 +9,7 @@ function Header() {
             <div className="cover">
                 <div className="flex">
                     <div className="logo">
-                        <Link to="/" className="icon">Private Note</Link>
+                        <a href="/" className="icon">Private Note</a>
                         <span className="tag">{lang.tagline}</span>
                     </div>
                     <div className="options">

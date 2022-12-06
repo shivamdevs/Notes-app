@@ -6,7 +6,10 @@
     },
     "home": {
         "newnote": "New Note",
+        "editnote": "Edit Note",
         "processing": "Processing...",
+        "failed": "Failed to create new Note",
+        "created": "Note created successfully",
         "placeholder": "Start writing your note from here...",
         "selfdestruct": {
             "days": "days",
@@ -15,7 +18,9 @@
             "reading": "reading"
         },
         "setoptions": "Set options",
-        "resetoptions": "Reset options"
+        "resetoptions": "Reset options",
+        "copy": "Copy link",
+        "copied": "Copied!"
     },
     "footer": {
         "version": "Version",
