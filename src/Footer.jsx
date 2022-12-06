@@ -10,7 +10,7 @@ function Footer() {
         if (update(option.value)) {
             window.location.reload();
         } else {
-            console.error("Couldn't update language: Option value doesn't match with the database");
+            console.error("Couldn't update language: Option value doesn't match with the database.");
         }
     };
     return (
@@ -22,7 +22,7 @@ function Footer() {
                         <div className="version"><span>{lang.footer.version}:</span> 1.0.0</div>
                     </div>
                     <div className="col">
-                        <Link to="/how-to">{lang.footer.howitworks}</Link>
+                        <Link to="/how-it-works">{lang.footer.howitworks}</Link>
                         <Link to="/faq">{lang.footer.faqs}</Link>
                         <Link to="/support">{lang.footer.support}</Link>
                     </div>

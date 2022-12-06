@@ -4,6 +4,19 @@
         "title": "Private Note",
         "mynotes": "My Notes"
     },
+    "home": {
+        "newnote": "New Note",
+        "processing": "Processing...",
+        "placeholder": "Start writing your note from here...",
+        "selfdestruct": {
+            "days": "days",
+            "hour": "hour",
+            "hours": "hours",
+            "reading": "reading"
+        },
+        "setoptions": "Set options",
+        "resetoptions": "Reset options"
+    },
     "footer": {
         "version": "Version",
         "howitworks": "How it works?",

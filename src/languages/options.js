@@ -10,6 +10,6 @@ const languages = {
         data: hindi,
         name: "हिन्दी"
     },
-}
+};
 
 export default languages;

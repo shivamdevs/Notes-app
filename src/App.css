@@ -47,6 +47,9 @@
     flex-wrap: wrap;
     transition: .2s;
     padding: 10px 20px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
     border: 1px solid transparent;
     background-color: transparent;
     border-radius: 5px;
@@ -93,4 +96,132 @@
 }
 .footer .select {
     min-width: 180px;
+}
+
+.link {
+    display: inline-block;
+    color: dodgerblue;
+    text-decoration: none;
+    font-weight: 500;
+}
+.link:hover {
+    color: darkblue;
+}
+
+.main {
+    padding: 20px 10px;
+}
+
+
+.noteapp {
+    display: block;
+    width: 100%;
+}
+.noteapp .title {
+    font-weight: 700;
+    font-size: 20px;
+    color: dodgerblue;
+}
+.noteapp .options {
+    margin-block: 20px;
+}
+.noteapp .options .flex {
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.noteapp .options .flex .flexblock {
+    flex: .5;
+}
+.noteapp .options .label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #545454;
+}
+.noteapp .options .reallabel {
+    display: flex;
+    margin-top: 10px;
+    cursor: pointer;
+    align-items: center;
+}
+.noteapp .options .reallabel input {
+    margin-right: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
+}
+.noteapp .options .input {
+    padding: 10px;
+    font-size: inherit;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    transition: .2s;
+    outline: none;
+}
+.noteapp .options .input:hover {
+    border-color: #aaa;
+}
+.noteapp .options .input:focus {
+    border-color: #2684ff;
+    box-shadow: 0 0 0 1px #2684ff;
+}
+.notepad {
+    width: 100%;
+    min-height: 300px;
+    padding: 20px 15px 40px;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    outline: none;
+    letter-spacing: 1px;
+    border: none;
+    resize: vertical;
+    background: none;
+    z-index: 2;
+    position: relative;
+}
+.noter:has(.notepad) {
+    position: relative;
+    margin-block: 20px;
+    background-color: #eef;
+}
+.noter:has(.notepad)::after {
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    z-index: 0;
+    right: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #727888 #fff #fff #727888;
+}
+.notepad:focus {
+    
+}
+.tip {
+    color: #727888;
+    font-size: 14px;
+    font-weight: 500;
+}
+.noteapp .submit {
+    border-color: #2bc48a;
+    background-color: #2bc48a;
+    color: #fff;
+    font-weight: 700;
+}
+.noteapp .submit:hover {
+    background-color: #0e8f5e;
+    border-color: #0e8f5e;
+}
+.noteapp .switch {
+    border-color: #727888;
+    background-color: #727888;
+    color: #fff;
+    font-weight: 700;
+}
+.noteapp .switch:hover {
+    background-color: #494f61;
+    border-color: #494f61;
 }
