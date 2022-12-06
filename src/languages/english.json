@@ -1,0 +1,17 @@
+{
+    "tagline": "Send notes privately with choice to self destruct.",
+    "header": {
+        "title": "Private Note",
+        "mynotes": "My Notes"
+    },
+    "footer": {
+        "version": "Version",
+        "howitworks": "How it works?",
+        "faqs": "FAQs",
+        "support": "Support",
+        "updates": "Updates",
+        "request": "Request features",
+        "social": "Social connect",
+        "translation": "Support translation"
+    }
+}

@@ -1,0 +1,96 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+.header {
+    border-bottom: 15px solid #ddd;
+    background-color: #efe;
+    padding: 10px 20px;
+}
+.cover {
+    max-width: 1000px;
+    width: 100%;
+    margin-inline: auto;
+}
+.flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.header .icon {
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: dodgerblue;
+}
+.header .tag {
+    color: purple;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+    max-width: 200px;
+    font-weight: 500;
+}
+.button {
+    display: inline-flex;
+    min-width: 180px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: .2s;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.header .mine {
+    border-color: dodgerblue;
+    color: dodgerblue;
+    font-weight: 500;
+}
+.header .mine:hover {
+    background-color: dodgerblue;
+    color: #fff;
+}
+.footer {
+    margin-top: auto;
+    padding: 10px 20px 30px;
+    border-top: 1px solid #ddd;
+    font-weight: 500;
+    font-size: 14px;
+}
+.footer a {
+    display: block;
+    color: #545454;
+    transition: .2s;
+}
+.footer a:hover {
+    color: dodgerblue;
+}
+.footer .col {
+    gap: 20px;
+    align-items: center;
+}
+.footer .copy {
+    color: blueviolet;
+    font-weight: 700;
+}
+.footer .version {
+    color: #727888;
+}
+.footer .version > span {
+    color: #545454;
+    font-weight: 700;
+}
+.footer .select {
+    min-width: 180px;
+}
