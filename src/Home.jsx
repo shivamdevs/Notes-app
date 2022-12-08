@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
+import { addNote } from "./firebase";
 
 import lang from "./language";
 
@@ -44,8 +45,10 @@ function Home() {
     const updateNoteValue = ({target}) => {setCreationValue(target.value)};
 
     const createNote = async () => {
+        setCreationError("");
+
         const note = creationValue;
-        const warning = customoptions ? optionWarning : true;
+        const warning = customoptionwarning ? false : !customoptions? true : optionWarning;
         const reference = customoptions ? optionReference : "";
         const encryption = customoptions ? optionEncryption : "";
         const selfdestruct = customoptions ? optionSelfdestruct : {label: "reading", value: 'reading'};
@@ -63,9 +66,17 @@ function Home() {
         switchSpace("processing");
         setStatus(lang.home.processing);
 
-        setNoteKey("Hello");
-        setNotePass("after");
-        setNoteSecret("Google");
+        const data = await addNote(note, warning, reference, encryption, selfdestruct);
+        if (data.status === "failed") {
+            setCreationError(data.message);
+            setStatus(lang.home.failed);
+            switchSpace("failed");
+            return;
+        }
+
+        setNoteKey(data.message.id);
+        setNotePass(data.message.passkey);
+        setNoteSecret(data.message.secret);
         setNoteLife(selfdestruct.label);
 
         switchSpace("created");

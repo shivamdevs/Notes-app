@@ -22,6 +22,9 @@
         "copy": "Copy link",
         "copied": "Copied!"
     },
+    "note": {
+        "waiting": "Connecting to server..."
+    },
     "footer": {
         "version": "Version",
         "howitworks": "How it works?",
