@@ -20,6 +20,12 @@
     justify-content: space-between;
     gap: 10px;
 }
+.flexgap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
 .col {
     display: flex;
     flex-direction: column;
@@ -64,6 +70,9 @@
     background-color: dodgerblue;
     color: #fff;
 }
+.header .select {
+    min-width: 200px;
+}
 .footer {
     margin-top: auto;
     padding: 10px 20px 30px;
@@ -81,7 +90,6 @@
 }
 .footer .col {
     gap: 20px;
-    align-items: center;
 }
 .footer .copy {
     color: blueviolet;
@@ -93,9 +101,6 @@
 .footer .version > span {
     color: #545454;
     font-weight: 700;
-}
-.footer .select {
-    min-width: 180px;
 }
 
 .link {
@@ -173,6 +178,7 @@
 .notepad {
     width: 100%;
     min-height: 300px;
+    max-height: 550px;
     padding: 20px 15px 40px;
     font-size: inherit;
     font-family: inherit;
@@ -242,6 +248,11 @@
     border-radius: 5px;
     box-shadow: 3px 3px 4px #1e8fff49;
 }
+.noteapp .created.reject {
+    border-left-color: #ea4343;
+    background-color: #fee;
+    box-shadow: 3px 3px 4px #ea434349;
+}
 .noteapp .created .key {
     width: 100%;
     font-size: inherit;
@@ -253,7 +264,6 @@
     margin-block: 10px;
 }
 .noteapp .created .bound {
-    display: block;
     font-size: 14px;
     font-weight: 500;
 }

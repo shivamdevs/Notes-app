@@ -23,7 +23,10 @@
         "copied": "Copied!"
     },
     "note": {
-        "waiting": "Connecting to server..."
+        "waiting": "Connecting to server...",
+        "failed": "Failed to get Note",
+        "destroy": "Destroy Note contents",
+        "readnote": "Read note contents"
     },
     "footer": {
         "version": "Version",

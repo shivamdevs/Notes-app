@@ -28,6 +28,32 @@ const random = (length) => {
 async function addNote(message, warning, reference, encryption, selfdestruct) {
     const secretkey = random(8);
     const passkey = random(10);
+    const expiring = (() =>{
+        const date = new Date();
+        if (selfdestruct.value === "reading") {
+            return null;
+        } else if (selfdestruct.value === "1-hour") {
+            return date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "2-hours") {
+            return date.setTime(date.getTime() + (2 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "3-hours") {
+            return date.setTime(date.getTime() + (3 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "6-hours") {
+            return date.setTime(date.getTime() + (6 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "12-hours") {
+            return date.setTime(date.getTime() + (12 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "24-hours") {
+            return date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "7-days") {
+            return date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+        } else if (selfdestruct.value === "30-days") {
+            return date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+        }
+    })();
+    const created = (() => {
+        const date = new Date();
+        return date.setTime(date.getTime());
+    })();
     try {
         const data = await addDoc(collection(db, "notes"), {
             note: message,
@@ -36,7 +62,9 @@ async function addNote(message, warning, reference, encryption, selfdestruct) {
             encrypt: encryption,
             destruct: selfdestruct.value,
             secret: secretkey,
-            passkey: passkey
+            passkey: passkey,
+            created: created,
+            expiring: expiring,
         });
         return {
             action: 'create-note',
@@ -58,22 +86,37 @@ async function addNote(message, warning, reference, encryption, selfdestruct) {
 };
 
 async function getNote(id, key) {
+    return {
+        action: 'get-note',
+        status: 'success',
+        message: {
+            "warn": true,
+            "note": "Hello \n\nExpired",
+            "expiring": 1670515196426,
+            "passkey": "6fvRCCPHRt",
+            "secret": "yxm7ZM79",
+            "destruct": "7-days",
+            "created": 1670504916305,
+            "encrypt": "Encrypt with password",
+            "refer": "Name for reference"
+        },
+    };
     const docRef = doc(db, 'notes', id);
     try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
             const data = docSnap.data();
-            if (data.secret === key) {
-                
+            if (data.secret === key || data.passkey === key) {
                 return {
                     action: 'get-note',
                     status: 'success',
+                    message: data,
                 };
-            } else if (data.passkey === key) {
+            } else {
                 return {
                     action: 'get-note',
-                    status: 'success',
-                    proceed: 'destroy',
+                    status: 'failed',
+                    message: "Note url is invalid. Please try again with a original url.",
                 };
             }
         } else {

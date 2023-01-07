@@ -48,7 +48,7 @@ function Home() {
         setCreationError("");
 
         const note = creationValue;
-        const warning = customoptionwarning ? false : !customoptions? true : optionWarning;
+        const warning = !customoptions ? true : customoptionwarning ? false : optionWarning;
         const reference = customoptions ? optionReference : "";
         const encryption = customoptions ? optionEncryption : "";
         const selfdestruct = customoptions ? optionSelfdestruct : {label: "reading", value: 'reading'};
@@ -228,12 +228,12 @@ function Home() {
                 </div>
                 <div className="flex">
                     <div className="flexblock">
-                        <button className="button submit" type="button" onClick={copyNoteLink}>{copyButton}</button>
+                        <button className="button switch" type="button" onClick={copyNoteLink}>{copyButton}</button>
                     </div>
                     <div className="flex">
-                        <div className="flexblock">
+                        <div className="flexgap">
+                            <Link to={`/note/${notekey}#${noteSecret}`} className="button submit" type="button">Open note</Link>
                             {noteLife === "reading" && <Link to={`/note/${notekey}#${notePass}`} className="button destroy" type="button">Destroy note</Link>}
-                            {noteLife !== "reading" && <Link to={`/note/${notekey}#${noteSecret}`} className="button submit" type="button">Open note</Link>}
                         </div>
                         <div className="flexblock">
                             <button className="button newnote" type="button" onClick={newNote}>Create new Note</button>
